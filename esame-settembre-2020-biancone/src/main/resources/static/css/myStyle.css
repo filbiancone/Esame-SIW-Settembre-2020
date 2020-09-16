@@ -1,0 +1,50 @@
+h1 {
+  color: purple;
+  font-size: 200%;
+  border-style: solid;
+  padding: 8px;
+  text-align: center;
+}
+
+body {
+	background-color: powderblue;
+}
+
+h2 {
+	color: blue;
+	font-size:175%;
+	border-top-style: solid;
+	border-bottom-style: double;
+	padding: 6px;
+}
+
+h4 {
+	color: blue;
+	font-size:150%;
+	padding: 5px;
+}
+
+div {
+	color:black;
+	border-top-style: double;
+	border-bottom-style: double;
+	padding: 3px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  style="width:100%";
+}
+
+th, td {
+  padding: 15px;
+}
+
+footer {
+	color: black;
+    border-top-style: solid;
+    margin-top: 10px;
+    padding: 5px;
+}

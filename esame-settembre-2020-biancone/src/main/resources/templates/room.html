@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: head"/>
+	<body>
+		<h1 th:text="#{info.reservation}">...</h1>
+		<div th:if="${freeRoom}">
+			<h4>
+				<div th:text="#{room} + *{id}">...</div>
+			</h4>
+			<table>
+				<tr>
+					<td th:text="#{reservation.guests}">...</td>
+					<td th:text="${reservation.posti}" style="text-align:right">value</td>
+				</tr>
+				<tr>
+					<td th:text="#{reservation.checkIn}">...</td>
+					<td th:text="${reservation.checkIn}" style="text-align:right">value</td>
+				</tr>
+				<tr>
+					<td th:text="#{reservation.checkOut}">...</td>
+					<td th:text="${reservation.checkOut}" style="text-align:right">value</td>
+				</tr>
+				<tr>
+					<td th:text="#{room.price}"></td>
+					<td th:text="|$*{freeRoom.prezzo}|" style="text-align:right">value</td>
+				</tr>
+				<tr>
+					<td th:text="#{room.singleBeds}">...</td>
+					<td th:text="*{freeRoom.lettiSingoli}" style="text-align:right">value</td>
+				</tr>
+				<tr>
+					<td th:text="#{room.doubleBeds}">...</td>
+					<td th:text=*{freeRoom.lettiMatrimoniali}
+						style="text-align:right">value</td>
+				</tr>
+			</table>
+			<div>
+				<h4 th:text="#{reservation.total} + ${totalCost}">...</h4>
+			</div>
+		</div>
+		<div th:unless="${freeRoom}" th:text="#{notFound}">...</div>
+	</body>
+	<footer>
+		<a th:href="@{/index}" th:text="#{homepage}">...</a>
+	</footer>
+</html>

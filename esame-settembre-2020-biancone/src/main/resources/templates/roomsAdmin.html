@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: head"/>
+	<body>
+		<h1 th:text="#{free.rooms} + ${onDate}">...</h1>
+		<div th:each="room: ${freeRooms}">
+			<p>
+				<p th:text="#{room} + ${room.id}">...</p>
+			</p>
+		</div>
+		<h1 th:text="#{reserved.rooms} + ${onDate}">...</h1>
+		<div th:each="room: ${reservedRooms}">
+			<p>
+				<p th:text="#{room} + ${room.id}">...</p>
+			</p>
+		</div>
+		<footer>
+			<a href="/admin" th:text="#{return}">...</a>
+		</footer>
+	</body>
+</html>

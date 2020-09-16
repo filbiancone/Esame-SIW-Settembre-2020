@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: head" />
+	<body>
+		<h1 th:text="#{available.rooms}">...</h1>
+		<div th:each="room: ${rooms}">
+			<p>
+				<a href="room.html" th:href="@{'/room/' + ${room.id}}"
+					th:text="#{room} + ${room.id}">...</a>
+			</p>
+		</div>
+		<footer>
+			<a href="/index" th:text="#{homepage}">...</a>
+		</footer>
+	</body>
+</html>

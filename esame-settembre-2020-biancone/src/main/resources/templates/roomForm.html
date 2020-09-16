@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: head"/>>
+	<body>
+		<h1 th:text="#{insert.room}">...</h1>
+		<form th:action="@{/room/form}" method="POST" th:object="${room}">
+			<div th:if="${#fields.hasGlobalErrors()}">
+				<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"
+					th:style="'color:red'">...</p>
+			</div>
+			<table>
+				<tr>
+					<td th:text="#{room.price}">...</td>
+					<td>
+						<input id="priceForm" type="number" th:field="*{prezzo}"
+							placeholder="0" min="0.01" step="0.01" />
+					</td>
+				</tr>
+				<tr>
+					<td  th:text="#{room.singleBeds}">...</td>
+					<td>
+						<input id="singleBedsForm" type="number"
+							th:field="*{lettiSingoli}" placeholder="0" min="0"/>
+							<td th:if="${#fields.hasErrors('lettiSingoli')}" th:errors="*{lettiSingoli}" th:style="'color:red'">...</td>
+					</td>
+				</tr>
+				<tr>
+					<td th:text="#{room.singleBeds}">...</td>
+					<td>
+						<input id="doubleBedsForm" type="number"
+							th:field="*{lettiMatrimoniali}" placeholder="0" min="0"/>
+							<td th:if="${#fields.hasErrors('lettiMatrimoniali')}" th:errors="*{lettiMatrimoniali}" th:style="'color:red'">...</td>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<button type="submit" th:text=#{submit}>...</button>
+			</div>
+		</form>
+		<footer>
+			<a href="/admin" th:text="#{cancel}">...</a>
+		</footer>
+	</body>
+</html>
