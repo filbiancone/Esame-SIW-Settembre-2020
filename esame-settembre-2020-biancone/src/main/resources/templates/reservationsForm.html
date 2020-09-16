@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: head"/>
+	<body>
+		<h1 th:text="#{period.reservation}">...</h1>
+		<form th:action="@{/reservations/form}" method="POST"
+			th:object="${onDate}">
+			<table>
+				<tr>
+					<td th:text="#{date.reservation}">...</td>
+					<td>
+						<input id="checkInForm" type="date" th:field="*{checkIn}" />
+						<td th:if="${#fields.hasErrors('checkIn')}"
+							th:errors="*{checkIn}" th:style="'color:red'"></td>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<label>
+					<button type="submit" th:text="#{submit}">...</button>
+				</label>
+			</div>
+		</form>
+		<footer>
+			<a href="/admin" th:text="#{cancel}">...</a>
+		</footer>
+	</body>
+</html>

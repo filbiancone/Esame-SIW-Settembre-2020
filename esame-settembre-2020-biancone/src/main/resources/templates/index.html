@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+	<head th:replace="fragments/base.html :: head"/>
+	<body>
+		<h1 th:text="#{welcome}">...</h1>
+		<div>
+			<h4><a href="/reservation/form" th:text="#{login.guest}">...</a></h4>
+		</div>
+		<div>
+			<h4><a href="/login" th:text="#{login.admin}">...</a></h4>
+		</div>
+	</body>
+</html>

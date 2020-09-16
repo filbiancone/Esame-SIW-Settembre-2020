@@ -1,0 +1,22 @@
+Attori:
+	-Utenti;
+	-Segreteria dell'albergo
+
+Precondizioni:
+	-La segreteria deve essere a conoscenza dell'user e password aziendali predefinite,
+		presenti nel file application.proterties sotto le preferenze di spring.security
+
+Casi d'uso:
+	-Il cliente accede senza bisogno di autenticazione alla pagina e riempie un
+		modulo che richiede il numero di ospiti in visita all'albergo e le date di
+		check-in e check-out. Verrà riportato ad una pagina contenente tutte le 
+		camere libere nel periodo che ha inserito.
+			-Se non ci sono camere libere, verrà mostrato un apposito messaggio.
+			-Se ci sono, una volta scelta la camera, gli viene mostrato un riepilogo
+				della prenotazione e l'importo totale.
+
+	-La segreteria può autenticarsi tramite un account predefinito aziendale.
+			-Può accedere ad una pagina per aggiungere al DB una nuova stanza
+				disponibile ai clienti per la prenotazione.
+			-Altrimenti può accedere ad una pagina dove, inserendo una data, mostra
+				tutte le stanze libere e tutte quelle prenotate quel giorno.
