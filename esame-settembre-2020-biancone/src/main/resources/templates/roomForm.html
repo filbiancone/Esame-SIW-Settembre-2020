@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="https://www.thymeleaf.org">
-	<head th:replace="fragments/base.html :: head"/>>
+	<head th:replace="fragments/base.html :: head"/>
 	<body>
 		<h1 th:text="#{insert.room}">...</h1>
 		<form th:action="@{/room/form}" method="POST" th:object="${room}">
